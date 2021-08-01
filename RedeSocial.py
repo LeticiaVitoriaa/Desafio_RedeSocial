@@ -15,18 +15,22 @@ for i in range(0, 4):
 print("----------------------")
 
 def exibe_amigos(pessoas, amizades, nomePessoa):
+    listaAmi = []
     for i in range(len(pessoas)):
         if pessoas[i] in nomePessoa:
-            print(nomePessoa)
-        for j in range(0, 4):
-                if amizades[i][j] == 1:
-                    print("Lista amigos de " + nomePessoa + ": ")
-                    return print(pessoas[j])
-        else:
+            for j in range(0, 4):
+                    if amizades[i][j] == 1:
+                        for pessoa in pessoas:
+                            listaAmi = pessoas
+                            pes = pessoa
+                            listaAmi += [pes]
+                        
+                        print("Lista amigos de " + nomePessoa + ": ")
+                        return print(listaAmi)
+            else:
                 print("Não tem amigos!")
     else: 
         return print("Nome não encontrado!")
-
 
 def exibe_amigos_comum(pessoas, nomePessoaX, nomePessoaY):
     tam = len(pessoas)
