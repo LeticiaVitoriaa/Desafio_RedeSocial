@@ -45,6 +45,8 @@ def exibe_amigos_comum(pessoas, nomePessoaX, nomePessoaY):
     else: 
         return print(".")
 
+
+
 # chama a função exibe_amigos
 tentativa = exibe_amigos(pessoas = ["Alice", "Bob", "Carol", "Danielle"], amizades = [[0,0,0,1],[1,0,1,1],[0,0,0,1],[1,1,0,0]], nomePessoa="Bob")
 
