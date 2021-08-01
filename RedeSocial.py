@@ -46,15 +46,37 @@ def exibe_amigos_comum(pessoas, nomePessoaX, nomePessoaY):
         return print(".")
 
 
+# Função para saber se a amizade é reciproca, entre duas pessoas da lista
+def entre_Amigos(nomePessoaA, nomePessoaB):
+    pessoas= ["Alice", "Bob", "Carol", "Danielle"]
+    tam = len(pessoas)
+    amizades = [[0,0,0,1],[1,0,1,1],[0,0,0,1],[1,1,0,0]]
+    tamMat = len(amizades)
 
-# chama a função exibe_amigos
-tentativa = exibe_amigos(pessoas = ["Alice", "Bob", "Carol", "Danielle"], amizades = [[0,0,0,1],[1,0,1,1],[0,0,0,1],[1,1,0,0]], nomePessoa="Bob")
+#verifica se as pessoas A e B estão na lista pessoas
+    for i in range(tam):
+        for j in range(tam):
+            if pessoas[i] in nomePessoaA and pessoas[j] in nomePessoaB:
+
+# percorre a matriz, para achar os valores coluna e linha iguais
+                for linha in range(tamMat):
+                    for coluna in range(len(amizades)):
+                        if amizades[i][coluna] == 1 and amizades [j][i] == 1:
+                            return print("São amigos entre si: " + nomePessoaA + " e " + nomePessoaB)
+                else: 
+                    return print("Não são amigos entre si.")
+    else: 
+        print("Nome Inválido.")
+
+
+#Chamada das funções
+testF1 = exibe_amigos(pessoas = ["Alice", "Bob", "Carol", "Danielle"], amizades = [[0,0,0,1],[1,0,1,1],[0,0,0,1],[1,1,0,0]], nomePessoa="Bob")
 
 print("----------------------")
+testF2 = exibe_amigos_comum(pessoas=["Alice", "Bob", "Carol", "Danielle"], nomePessoaX="Bob", nomePessoaY="Danielle")
 
-#chama a função exibe_amigos_comum
-tent = exibe_amigos_comum(pessoas=["Alice", "Bob", "Carol", "Danielle"], nomePessoaX="Bob", nomePessoaY="Danielle")
-
+print("----------------------")
+testF3 = entre_Amigos(nomePessoaA="Alice", nomePessoaB="Danielle")
 
 
 
